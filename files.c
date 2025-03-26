@@ -210,7 +210,6 @@ int main() {
 		EmployeePtr newEmployee = createNewEmployee(id, name, salary);
 		employeesList = addNewEmployee(employeesList, newEmployee);
 		saveEmployeesToFile(employeesList);
-		// printEmployees(employeesList);
 	}
 	
 	printf("give me an index of an employee to read: ");
