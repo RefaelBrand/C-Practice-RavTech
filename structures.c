@@ -89,6 +89,14 @@ employeePtr findTopEmp(employeePtr employees) {
 	return maxEmployee;
 }
 
+void freeList(employeePtr employees) {
+	while (employees) {
+		employeePtr toFree = employees;
+		employees = employees->next;
+		free(toFree);
+	}
+}
+
 int main() {
 	struct Employee *employees = NULL;
 	
@@ -103,6 +111,8 @@ int main() {
 	employeePtr maxEmployee = findTopEmp(employees);
 	printf("the employee with the highest salary:\n");
 	printEmployee(maxEmployee);
+	
+	freeList(employees);
 	
 	return 0;
 }
